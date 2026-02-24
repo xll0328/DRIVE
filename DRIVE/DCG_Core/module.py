@@ -101,51 +101,31 @@ class LaneModule(pl.LightningModule):
         logits, attns,concepts = self(image_array, angle, distance, vego)
         return logits, angle, distance,concepts
     # def predict_step(self, batch, batch_idx):
-    #     # 解构批次数据
+    #     # Unpack batch
     #     _, image_array, vego, angle, distance, m_lens, i_lens, s_lens, a_lens, d_lens = batch
-
-    #     # 初始化变量以存储概念概率
     #     concept_probs_batch = []
-
     #     if self.time_horizon > 1:
     #         logits_all = []
     #         for i in range(self.time_horizon, vego.shape[1], self.time_horizon):
     #             for j in range(self.time_horizon):
-    #                 # 创建输入ID
     #                 input_ids_img, input_ids_vego, input_ids_angle, input_ids_distance = (
     #                     image_array[:, 0:i+j, :, :, :],
     #                     vego[:, 0:i+j],
     #                     angle[:, 0:i+j],
     #                     distance[:, 0:i+j]
     #                 )
-
-    #                 # 预测逻辑保持不变
     #                 if self.multitask == "angle" and len(logits_all) > 0:
     #                     angle[:, i+j] = torch.tensor(logits_all)[-1]
     #                 if self.multitask == "distance" and len(logits_all) > 0:
     #                     distance[:, i+j] = torch.tensor(logits_all)[-1]
-
-    #                 # 调用模型的forward方法，并收集概念概率
     #                 logits, attns, probs = self.forward(image_array, input_ids_angle, input_ids_distance, input_ids_vego)
-                    
-    #                 # 存储概念概率
     #                 concept_probs_batch.append(probs)
-
-    #                 # 收集logits
     #                 logits_all.append(logits)
-
-    #         # 转换logits为张量
     #         logits = torch.tensor(logits_all)
     #     else:
-    #         # 直接调用模型的forward方法，并收集概念概率
     #         logits, attns, probs = self.forward(image_array, angle, distance, vego)
-    #         # 存储概念概率
     #         concept_probs_batch.append(probs)
-
-    #     # 将概念概率转换为张量（如果需要）
     #     concept_probs = torch.stack(concept_probs_batch)
-
-    #     # 返回原有预测结果和概念概率
     #     return logits, angle, distance, concept_probs
 
 

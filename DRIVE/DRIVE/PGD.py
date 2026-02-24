@@ -56,7 +56,7 @@ class PGD_input(nn.Module):
 
     def perturb(self, batch):
         self.model.eval()
-        with torch.enable_grad():  # 启用梯度计算
+        with torch.enable_grad():  # Enable gradient computation for perturbation
             noise_img = self.forward(batch)
         return noise_img
 

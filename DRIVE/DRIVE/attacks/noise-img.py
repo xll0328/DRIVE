@@ -50,8 +50,8 @@ def modify_image_group(h5_file_path):
 
                 print(f"Added Gaussian noise to all images in group '{group_key}'")
 
-# 配置参数
-h5_file_path = '/hpc2hdd/home/tianlangxue/XAI4AD/comma2k19data/comma_test_w_desired_filtered copy.h5py'  # HDF5文件路径
+# Configuration: set your HDF5 dataset path here
+h5_file_path = '/hpc2hdd/home/tianlangxue/XAI4AD/comma2k19data/comma_test_w_desired_filtered copy.h5py'
 
-# 运行函数
-modify_image_group(h5_file_path)
+if __name__ == '__main__':
+    modify_image_group(h5_file_path)
