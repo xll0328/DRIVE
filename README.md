@@ -164,10 +164,11 @@ More examples: see `DRIVE/DRIVE/sh_scripts/` (e.g. `run_experiments_concept_comm
 ## Citation
 
 ```bibtex
-@misc{lai2024drivedependablerobustinterpretable,
+@inproceedings{lai2025drive,
   title={DRIVE: Dependable Robust Interpretable Visionary Ensemble Framework in Autonomous Driving},
   author={Songning Lai and Tianlang Xue and Hongru Xiao and Lijie Hu and Jiemin Wu and Ninghui Feng and Runwei Guan and Haicheng Liao and Zhenning Li and Yutao Yue},
-  year={2024},
+  booktitle={Proceedings of the IEEE International Conference on Robotics and Automation (ICRA)},
+  year={2025},
   eprint={2409.10330},
   archivePrefix={arXiv},
   primaryClass={cs.RO},
